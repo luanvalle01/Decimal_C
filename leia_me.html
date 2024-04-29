@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decimal Operations</title>
+</head>
+<body leftmargin = 25  style="max-width:750px">
+    <div style = "line-height:0.5">
+	<h1>Operações com Decimais</h1>
+	<h3><span style="display:inline-block;width:25px;"></span>por Luan Valle</html></h3>
+    </div>
+	
+	<p><span style="display:inline-block;width:25px;"></span>A estrutura Decimal é uma estrutura em C que permite trabalhar com números 
+	decimais de precisão fixa (9 dígitos decimais e 9 dígitos inteiros). Para começar a usar, você precisa incluir o arquivo de cabeçalho 
+	`decimal.h` no seu código C.</p>
+	
+    <span style="display:inline-block;width:25px;"></span><code>#include "decimal.h"</code>
+    <pre><span style="display:inline-block;width:75px;"></span>Ou</pre>
+    <span style="display:inline-block;width:25px;"></span><code>#include "decimal.c"</code>
+	
+    <h2>Funções Disponíveis</h2>
+    <p><span style="display:inline-block;width:25px;"></span>A estrutura Decimal oferece as seguintes funções:</p>
+    <table border="1">
+        <tr>
+            <th>Função</th>
+            <th>Descrição</th>
+        </tr>
+        <tr>
+            <td><code>set_value(Decimal *this, char *number)</code></td>
+            <td>Define o valor do número decimal.</td>
+        </tr>
+        <tr>
+            <td><code>get_number(Decimal *this)</code></td>
+            <td>Retorna o número decimal como uma string formatada.</td>
+        </tr>
+        <tr>
+            <td><code>decimal_add(Decimal *res, Decimal *n1, Decimal *n2)</code></td>
+            <td>Adiciona dois números decimais.</td>
+        </tr>
+        <tr>
+            <td><code>decimal_sub(Decimal *res, Decimal *n1, Decimal *n2)</code></td>
+            <td>Subtrai dois números decimais.</td>
+        </tr>
+        <tr>
+            <td><code>decimal_mult(Decimal *res, Decimal *n1, Decimal *n2)</code></td>
+            <td>Multiplica dois números decimais.</td>
+        </tr>
+    </table>
+    
+    <h2>Exemplo de Uso</h2>
+    <p>Aqui está um exemplo de como usar a estrutura Decimal e suas funções de operações:</p>
+<pre><code><div style="padding:25px">#include "decimal.h"
+
+int main() {
+	// Cria novos números decimais
+	Decimal *num1 = new_Decimal();
+	Decimal *num2 = new_Decimal();
+	Decimal *resultado = new_Decimal();
+	
+	// Define os valores dos números
+	num1->set_value(num1, "123.456");
+	num2->set_value(num2, "789.012");
+	
+	// Realiza a operação de adição
+	decimal_add(resultado, num1, num2);
+	
+	// Imprime o resultado
+	printf("Resultado da adição: %s\n", resultado->get_number(resultado));
+	
+	// Libera a memória alocada
+	destroy_Decimal(num1);
+	destroy_Decimal(num2);
+	destroy_Decimal(resultado);
+	
+	return 0;
+}</div></code></pre>
+    
+    <h2>Considerações Finais</h2>
+	<ol>
+		<li><b>Certifique-se de gerenciar corretamente a alocação e liberação de memória 
+		ao usar esta estrutura.</b></li>
+		<li>A precisão é fixa, tenha certeza de que as operações não irão exceder o limite da estrutura</li>
+		<li>A operação de divisão será implementada posteriormente.</li>
+	</ol>
+</body>
+<footer>
+	<hr></hr>
+	<p>Desenvolvido por <a href="https://github.com/luanvalle01" target="_blank">Luan Henrique do Valle</a>, 2024</p>
+</footer>
+</html>
