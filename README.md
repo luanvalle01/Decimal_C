@@ -9,6 +9,9 @@ A estrutura Decimal é uma estrutura em C que permite trabalhar com números dec
 > Usar "decimal.c" diretamente tende a funcionar melhor.
 > >Ao usar "decimal.h" é necessário compilar o código fonte decimal.c junto de seu código.
 
+> [!IMPORTANT]
+> Caso o arquivo não esteja no mesmo diretório de seu código é necessário especificar o caminho em na inclusão
+
 ## **Funções Disponíveis**
 A estrutura Decimal oferece as seguintes funções:
 
@@ -22,7 +25,7 @@ A estrutura Decimal oferece as seguintes funções:
 ## **Exemplo de Uso**
 Aqui está um exemplo de como usar a estrutura Decimal e suas funções de operações:
 ```C
-#include "decimal.h"
+#include "decimal.c"
 
 int main() {
 
